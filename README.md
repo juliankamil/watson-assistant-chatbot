@@ -29,7 +29,7 @@ puts chatbot.message(request.to_json)
 
 ## Credits
 
-Copyright (C) 2018 [Julian I. Kamil / @juliankamil](https://twitter.com/juliankamil)
+Copyright (c) 2018 [Julian I. Kamil / @juliankamil](https://twitter.com/juliankamil)
 
 ## License
 
