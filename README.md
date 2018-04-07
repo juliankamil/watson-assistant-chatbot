@@ -1,4 +1,5 @@
-# watson-assistant-chatbot - A Ruby Chatbot for IBM Watson Assistant
+# watson-assistant-chatbot
+## A Ruby Chatbot for IBM Watson Assistant
 
 [![Gem Version](https://badge.fury.io/rb/watson-assistant-chatbot.svg)](http://badge.fury.io/rb/watson-assistant-chatbot)
 
