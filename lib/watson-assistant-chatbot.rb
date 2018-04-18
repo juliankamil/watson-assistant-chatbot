@@ -8,6 +8,7 @@ require 'json'
 module WatsonAssistant
     API_PROTOCOL = 'https'
     API_SERVICE  = 'assistant'
+    INTENT_UNDETECTED = '-- undetected --'
 
     class Chatbot
         attr_accessor :user_id, :password, :workspace_id
@@ -51,7 +52,7 @@ module WatsonAssistant
                 intent     = results["intents"][0]["intent"]
                 confidence = results["intents"][0]["confidence"]
             else
-                intent     = 'undetected'
+                intent     = INTENT_UNDETECTED
                 confidence = '1'
             end
 
