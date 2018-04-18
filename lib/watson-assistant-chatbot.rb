@@ -1,4 +1,4 @@
-# chatbot.rb
+# watson-assistant-chatbot.rb
 # Julian I. Kamil / @juliankamil
 # 2018/04/04
 
@@ -36,6 +36,26 @@ module WatsonAssistant
                 ).execute
 
             results = JSON.parse(response.to_str)
+        end
+
+        def conversation_id(results)
+            results["context"]["conversation_id"]
+        end
+
+        def response_text(results)
+            results["output"]["text"][0] if (results["output"]["text"].length > 0)
+        end
+
+        def intent_and_confidence(results)
+            if (results["intents"].length > 0)
+                intent     = results["intents"][0]["intent"]
+                confidence = results["intents"][0]["confidence"]
+            else
+                intent     = 'undetected'
+                confidence = '1'
+            end
+
+            return intent, confidence
         end
 
         private def message_url
