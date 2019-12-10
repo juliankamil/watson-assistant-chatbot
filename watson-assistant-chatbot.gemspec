@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
     s.name        = 'watson-assistant-chatbot'
-    s.version     = '0.1.1'
-    s.date        = '2018-04-04'
+    s.version     = '0.1.2'
+    s.date        = '2019-12-10'
     s.summary     = 'Watson Assistant Chatbot'
     s.description = 'A Ruby chatbot that uses Watson Assistant'
     s.authors     = [ 'Julian I. Kamil' ]

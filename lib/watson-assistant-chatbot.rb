@@ -11,19 +11,25 @@ module WatsonAssistant
     INTENT_UNDETECTED = '-- undetected --'
 
     class Chatbot
-        attr_accessor :user_id, :password, :workspace_id
+        attr_accessor :user_id, :password, :api_key, :workspace_id
 
         @api_domain  = 'gateway.watsonplatform.net'
-        @api_version = '2018-02-16'
+        @api_version = '2019-02-28'
 
         class << self
             attr_accessor :api_domain, :api_version
         end
 
-        def initialize(user_id, password, workspace_id)
+        def initialize(user_id, password, workspace_id, api_key = nil)
             @user_id      = user_id
             @password     = password
             @workspace_id = workspace_id
+            @api_key      = api_key
+
+            if api_key then
+                @user_id  = 'apikey'
+                @password = api_key
+            end
         end
 
         def message(request)
