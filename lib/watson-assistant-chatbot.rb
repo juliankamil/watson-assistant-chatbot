@@ -18,6 +18,14 @@ module WatsonAssistant
 
         class << self
             attr_accessor :api_domain, :api_version
+
+            def new_with_api_key(workspace_id, api_key)
+                new(nil, nil, workspace_id, api_key)
+            end
+
+            def new_with_user_credentials(workspace_id, user_id, password)
+                new(user_id, password, workspace_id)
+            end
         end
 
         def initialize(user_id, password, workspace_id, api_key = nil)
