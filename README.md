@@ -26,12 +26,29 @@ If not present, the above command will also install `rest-client` and `json` gem
 require 'watson-assistant-chatbot'
 require 'json'
 
-chatbot = WatsonAssistant::Chatbot.new('user_id', 'password', 'workspace_id')
+# get a chatbot instance
+chatbot = WatsonAssistant::Chatbot.new_with_api_key('workspace_id', 'api_key')
 
+# set a request with an utterance
 request = { "input" => { "text" => "hello" } }
 
-puts chatbot.message(request.to_json)
+# send the request and get the json results
+results = chatbot.message(request.to_json)
+
+# display the chatbot response text
+puts chatbot.response_text(results)
 ```
+
+In the above example, `results` is a JSON object containing the "output" and "context" returned by IBM Watson Assistant. 
+
+```json { .line-numbers }
+{
+    "output": { "intents": [], "entities": [], ... },
+    "context": { ... }
+}
+```
+
+See [IBM Watson Assistant v2 API documentation](https://cloud.ibm.com/apidocs/assistant-v2#send-user-input-to-assistant-stateless) for more details on this response object.
 
 ## Prerequisites
 
@@ -39,7 +56,7 @@ puts chatbot.message(request.to_json)
 
 ## Credits
 
-Copyright (c) 2020 [Julian I. Kamil / @juliankamil](https://twitter.com/juliankamil)
+Copyright (c) 2018 - 2020 [Julian I. Kamil / @juliankamil](https://twitter.com/juliankamil)
 
 ## License
 
