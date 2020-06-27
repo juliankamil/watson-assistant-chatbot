@@ -52,7 +52,15 @@ See [IBM Watson Assistant v2 API documentation](https://cloud.ibm.com/apidocs/as
 
 ## Prerequisites
 
-- IBM Watson Assistant instance
+- IBM Watson Assistant instance configured with a skill
+
+## References
+
+- Getting started with IBM Watson Assistant
+  https://cloud.ibm.com/docs/assistant?topic=assistant-getting-started#getting-started
+
+- IBM Watson Assistant v2 API documentation
+  https://cloud.ibm.com/apidocs/assistant-v2#send-user-input-to-assistant-stateless
 
 ## Credits
 
